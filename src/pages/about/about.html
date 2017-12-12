@@ -7,5 +7,15 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      Teste MQTT
+    </ion-list-header>
 
+    <ion-item>
+      <ion-label>Liga som</ion-label>
+      <ion-toggle [(ngModel)]="sound" name="sound" (ionChange)="powerSound()" checked="false"></ion-toggle>
+    </ion-item>
+  </ion-list>
+  Temperatura: {{(mqttMessages | async)?.payload.toString()}}
 </ion-content>
